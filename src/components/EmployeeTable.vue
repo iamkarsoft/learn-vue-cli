@@ -1,4 +1,5 @@
 <template>
+<div id="employee-table">
 <table>
   <thead>
     <tr>
@@ -7,21 +8,19 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Kofi Ramos</td>
-      <td>kofiramos@gmail.com</td>
-    </tr>
-    <tr>
-      <td>Kojo Ramos</td>
-      <td>kojoramos@gmail.com</td>
-    </tr>
+   <tr v-for="employee in employees" :key="employee.id">
+     <td>{{employee.name}}</td>
+     <td>{{employee.email}}</td>
+   </tr>
   </tbody>
 </table>
+</div>
 </template>
 
 <script>
 export default {
   name: 'employee-table',
+  props: ['employees'],
 }
 </script>
 

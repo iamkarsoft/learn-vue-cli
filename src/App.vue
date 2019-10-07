@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="small-container">
     <h1>Employees</h1>
-    <employee-table></employee-table>
+    <employee-table :employees="employees"></employee-table>
   </div>
 </template>
 
@@ -13,7 +13,23 @@ export default {
   name: 'app',
   components: {
     EmployeeTable
+  },
+  data() {
+    return{
+    employees: [
+      {
+        id: 1,
+        name: 'Kofi Ramos',
+        email: 'kofiramos@example.com'
+      },
+      {
+        id: 2,
+        name: 'Kojo Ramos',
+        email: 'kojoramos@example.com'
+      },
+    ],
   }
+},
 }
 </script>
 
